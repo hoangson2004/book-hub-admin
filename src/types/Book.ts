@@ -11,12 +11,12 @@ export interface Book {
 
 
 export interface BookBase {
-    title: string; // Tiêu đề
-    author: string; // Tác giả
-    price: number; // Giá tiền
-    stock: number; // Số lượng tồn kho
-    image: File; // Ảnh bìa (dạng File upload)
-    description?: string; // Mô tả
+    title: string; 
+    author: string; 
+    price: number; 
+    stock: number; 
+    image: File; 
+    description?: string; 
 }
 
 export type CreateBookPayload = BookBase;

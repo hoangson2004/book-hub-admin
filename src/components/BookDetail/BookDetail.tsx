@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // useParams để lấy ID từ URL
-import { getBookById, updateBook, deleteBook } from '../../services/bookService'; // API service
-import { Book } from '../../types/Book'; // Import type Book
-import { UpdateBookPayload } from '../../types/Book'; // Import type UpdateBookPayload
-import './BookDetail.css'; // Import CSS
+import { useParams, useNavigate } from 'react-router-dom'; 
+import { getBookById, updateBook, deleteBook } from '../../services/bookService'; 
+import { Book } from '../../types/Book';
+import { UpdateBookPayload } from '../../types/Book'; 
+import './BookDetail.css';
 
 const BookDetail: React.FC = () => {
-  const { id } = useParams(); // Lấy ID sách từ URL
-  const navigate = useNavigate(); // Để điều hướng về danh sách sách sau khi thao tác xong
+  const { id } = useParams(); 
+  const navigate = useNavigate(); 
   const [book, setBook] = useState<Book | null>(null);
   const [formData, setFormData] = useState<UpdateBookPayload>({
     title: '',
     author: '',
     price: 0,
     stock: 0,
-    image: new File([], ''), // Khởi tạo một file trống
+    image: new File([], ''),
     description: '',
   });
 
@@ -28,7 +28,7 @@ const BookDetail: React.FC = () => {
           author: bookDetails.author,
           price: bookDetails.price,
           stock: bookDetails.stock,
-          image: new File([], ''), // File trống vì có thể chưa tải lại
+          image: new File([], ''), 
           description: bookDetails.description || '',
         });
       } catch (error) {
@@ -44,7 +44,7 @@ const BookDetail: React.FC = () => {
     try {
       const updatedBook = await updateBook(id || '', formData);
       console.log('Sách đã được cập nhật:', updatedBook);
-      navigate('/books'); // Điều hướng về trang danh sách sách sau khi cập nhật
+      navigate('/books'); 
     } catch (error) {
       console.error('Lỗi khi cập nhật sách:', error);
     }

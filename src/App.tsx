@@ -12,7 +12,7 @@ import CreateBook from './components/CreateBook/CreateBook';
 import UserList from './components/UserList/UserList';
 import UserDetail from './components/UserDetail/UserDetail';
 import UserHistory from './components/UserHistory/UserHistory';
-import OrderList from './components/OrderList.tsx/OrderList';
+import OrderList from './components/OrderList/OrderList';
 import OrderDetail from './components/OrderDetail/OrderDetail';
 
 const App: React.FC = () => {
@@ -28,8 +28,8 @@ const App: React.FC = () => {
       </Route>
       <Route path="/users" element={<UserManagement />} >
         <Route index element={<UserList />} />
-        <Route path="/users/:id" element={<UserDetail />} />
-        <Route path="/users/:id/history" element={<UserHistory />} />
+        <Route path="/users/:userId/history" element={<UserHistory />} />
+        <Route path="/users/:userId" element={<UserDetail />} />
       </Route>
       <Route path="/orders" element={<OrderManagement />}>
         <Route index element={<OrderList />} />

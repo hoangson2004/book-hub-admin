@@ -15,7 +15,7 @@ export const register = async (data: RegisterData): Promise<void> => {
 
 export const login = async (data: LoginData): Promise<LoginResponse> => {
   try {
-    const response = await api.post('/auth/login', data);
+    const response = await api.post('/auth/loginadmin', data);
     return response.data;
   } catch (error) {
     console.error('Lỗi khi đăng nhập:', error);

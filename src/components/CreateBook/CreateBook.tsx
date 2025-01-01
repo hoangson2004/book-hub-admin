@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { createBook } from '../../services/bookService'; // API service
-import { BookBase } from '../../types/Book'; // Import type BookBase
-import { useNavigate } from 'react-router-dom'; // Import useNavigate để chuyển hướng
-import './CreateBook.css'; // Import CSS file
+import { createBook } from '../../services/bookService'; 
+import { BookBase } from '../../types/Book';
+import { useNavigate } from 'react-router-dom'; 
+import './CreateBook.css'; 
 
 const CreateBook: React.FC = () => {
   const [formData, setFormData] = useState<BookBase>({

@@ -1,4 +1,3 @@
-/* BookList.css */
 .book-list {
     padding: 20px;
     background-color: #fff;
@@ -17,12 +16,10 @@
     font-size: 24px;
     margin-bottom: 20px;
     text-align: left;
-    /* Đảm bảo tiêu đề nằm bên trái */
 }
 
 .add-book-btn-container {
     text-align: right;
-    /* Đẩy nút thêm sách sang bên phải */
     margin-bottom: 20px;
 }
 

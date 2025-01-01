@@ -1,34 +1,34 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Sidebar.css'; 
+import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
-  const location = useLocation(); // Dùng useLocation để lấy đường dẫn hiện tại
+  const location = useLocation();
 
   return (
     <div className="sidebar">
       <h3>Quản lý</h3>
       <ul>
         <li>
-          <Link 
-            to="/books" 
+          <Link
+            to="/books"
             className={location.pathname.startsWith('/books') ? 'active' : ''}
           >
             Quản lý truyện
           </Link>
         </li>
         <li>
-          <Link 
-            to="/users" 
+          <Link
+            to="/users"
             className={location.pathname.startsWith('/users') ? 'active' : ''}
           >
             Quản lý người dùng
           </Link>
         </li>
         <li>
-          <Link 
-            to="/orders" 
-            className={location.pathname === '/orders' ? 'active' : ''}
+          <Link
+            to="/orders"
+            className={location.pathname.startsWith('/orders') ? 'active' : ''}
           >
             Quản lý đơn hàng
           </Link>

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { getAllBooks } from '../../services/bookService';
 import { Book } from '../../types/Book';
-import Sidebar from '../../components/Sidebar/Sidebar';  // Import Sidebar
-import './BookManagement.css'; // Import CSS file
+import Sidebar from '../../components/Sidebar/Sidebar';  
+import './BookManagement.css'; 
 import Shell from '../../components/Shell/Shell';
 
 const BookManagement: React.FC = () => {

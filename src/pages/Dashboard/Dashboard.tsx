@@ -1,14 +1,14 @@
 import React from 'react';
-
+import './Dashboard.css';  
 const Dashboard: React.FC = () => {
   return (
-    <div style={{ padding: '20px', backgroundColor: '#f8f9fa', height: '100%' }}>
-      <h1>Chào mừng bạn đến với Dashboard</h1>
+    <div className="dashboard-container">
+      <h1>Chào mừng bạn đến với The Book Hub Dashboard</h1>
       <p>
         Đây là giao diện chính của hệ thống. Vui lòng đăng nhập để truy cập các chức năng quản lý.
       </p>
 
-      <div style={{ marginTop: '20px' }}>
+      <div className="functions-container">
         <h3>Các chức năng:</h3>
         <ul>
           <li>Quản lý sách</li>

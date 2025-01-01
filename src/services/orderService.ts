@@ -8,7 +8,7 @@ import {
 export const getOrdersByUserId = async (userId: string): Promise<GetOrdersByUserIdResponse> => {
     try {
         const response = await api.get(`/order/user/${userId}`);
-        return response.data.data; 
+        return response.data; 
     } catch (error) {
         console.error('Lỗi khi lấy danh sách đơn hàng theo userId:', error);
         throw error;

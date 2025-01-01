@@ -5,21 +5,21 @@ import { User } from '../../types/User';
 import './UserDetail.css';
 
 const UserDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { userId } = useParams<{ userId: string }>();
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const userData = await getUserById(id || '');
+        const userData = await getUserById(userId || '');
         setUser(userData);
       } catch (error) {
         console.error('Lỗi khi lấy thông tin người dùng:', error);
       }
     };
 
-    if (id) fetchUser();
-  }, [id]);
+    if (userId) fetchUser();
+  }, [userId]);
 
   if (!user) return <div>Đang tải...</div>;
 

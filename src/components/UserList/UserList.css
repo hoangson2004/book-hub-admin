@@ -5,17 +5,19 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.user-list-header {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
 
-.user-list h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: left;
+.search-container input {
+    padding: 8px;
+    font-size: 14px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .user-list-table {
@@ -38,20 +40,6 @@
     background-color: #f2f2f2;
 }
 
-.user-list-table a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.user-list-table a:hover {
-    text-decoration: underline;
-}
-
-.no-users {
-    font-size: 18px;
-    color: #999;
-}
-
 .user-list-table td button {
     padding: 8px 12px;
     font-size: 14px;
@@ -60,15 +48,19 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-right: 10px; /* Khoảng cách giữa các nút */
+    margin-right: 10px;
 }
 
 .user-list-table td button:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ */
+    transform: scale(1.05);
 }
 
 .user-list-table td .last-button {
-    margin-right: 0; /* Loại bỏ khoảng cách nút cuối */
+    margin-right: 0;
+}
+
+.no-users {
+    font-size: 18px;
+    color: #999;
 }
