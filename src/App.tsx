@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home'
+import SignInPage from './pages/SignIn/SignIn';
+import BookManagement from './pages/BookManagement/BookManagement';
+import UserManagement from './pages/UserManagement/Usermanagement';
+import OrderManagement from './pages/OrderManagement/OrderManagement';
+import Dashboard from './pages/Dashboard/Dashboard'
+import BookDetail from './components/BookDetail/BookDetail';
+import BookList from './components/BookList/BookList';
+import CreateBook from './components/CreateBook/CreateBook';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path='/sign-in' element={<SignInPage />} />
+      <Route path="/books" element={<BookManagement />} >
+        <Route index element={<BookList />} />
+        <Route path="create" element={<CreateBook />} />
+        <Route path=":id" element={<BookDetail />} />
+      </Route>
+      <Route path="/users" element={<UserManagement />} />
+      <Route path="/orders" element={<OrderManagement />} />
+    </Routes>
+  );
+};
 
-export default App
+export default App;

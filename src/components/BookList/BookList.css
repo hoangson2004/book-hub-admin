@@ -1,0 +1,82 @@
+/* BookList.css */
+.book-list {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.book-list h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+    /* Đảm bảo tiêu đề nằm bên trái */
+}
+
+.add-book-btn-container {
+    text-align: right;
+    /* Đẩy nút thêm sách sang bên phải */
+    margin-bottom: 20px;
+}
+
+.add-book-btn-container button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-book-btn-container button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f8f9fa;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+.no-books {
+    font-size: 18px;
+    color: #999;
+}

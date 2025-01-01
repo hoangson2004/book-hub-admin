@@ -1,0 +1,61 @@
+.create-book-container {
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-book-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.create-book-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-book-container label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+.create-book-container input,
+.create-book-container textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.create-book-container input[type="file"] {
+    padding: 5px;
+}
+
+.create-book-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-book-container button:hover {
+    background-color: #0056b3;
+}
+
+.create-book-container button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}

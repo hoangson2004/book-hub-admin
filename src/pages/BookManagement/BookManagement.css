@@ -1,0 +1,15 @@
+/* BookManagement.css */
+.book-management-container {
+    display: flex;
+    min-height: 100vh; /* Đảm bảo chiều cao đầy đủ của trang */
+    flex-direction: row;
+    background-color: #f8f9fa;
+}
+
+.book-management-content {
+    flex: 1; /* Chứa nội dung chính */
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px; /* Để nội dung không bị đè lên sidebar */
+}
+
