@@ -1,66 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import { getUsers } from '../../services/userService'; // API lấy danh sách người dùng
-import { useNavigate } from 'react-router-dom';
-import { User } from '../../types/User'; // Import type User
-import './UserList.css'; // Import CSS
+import React from 'react';
+import { useNavigate, useOutletContext } from 'react-router-dom';
+import { User } from '../../types/User';
+import './UserList.css';
 
 const UserList: React.FC = () => {
-    const [users, setUsers] = useState<User[]>([]);
-    const navigate = useNavigate();
+  const { users } = useOutletContext<{ users: User[] }>();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const usersData = await getUsers();
-                setUsers(usersData);
-            } catch (error) {
-                console.error('Lỗi khi lấy danh sách người dùng:', error);
-            }
-        };
+  const handleNavigateToHistory = (id: string) => {
+    navigate(`/users/${id}/history`);
+  };
 
-        fetchUsers();
-    }, []);
+  const handleNavigateToDetail = (id: string) => {
+    navigate(`/users/${id}`);
+  };
 
-    const handleViewDetail = (id: string) => {
-        navigate(`/users/${id}`); // Điều hướng đến trang chi tiết người dùng
-    };
+  if (!users || users.length === 0) {
+    return <div className="no-users">Không có người dùng nào để hiển thị.</div>;
+  }
 
-    const handleViewHistory = (id: string) => {
-        navigate(`/users/${id}/history`); // Điều hướng đến trang lịch sử mua hàng
-    };
+  return (
+    <div className="user-list">
+      <div className="user-list-header">
+        <h3>Danh sách người dùng</h3>
+      </div>
 
-    return (
-        <div className="user-list-container">
-            <h2>Danh sách người dùng</h2>
-            <table className="user-list-table">
-                <thead>
-                    <tr>
-                        <th>UserID</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Hành động</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users.map((user) => (
-                        <tr key={user.id}>
-                            <td>{user.id}</td>
-                            <td>{user.username}</td>
-                            <td>{user.email}</td>
-                            <td>
-                                <button onClick={() => handleViewDetail(user.id)} className="btn btn-primary">
-                                    Chi tiết
-                                </button>
-                                <button onClick={() => handleViewHistory(user.id)} className="btn btn-secondary">
-                                    Lịch sử mua hàng
-                                </button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
+      <table className="user-list-table">
+        <thead>
+          <tr>
+            <th>UserID</th>
+            <th>Tên người dùng</th>
+            <th>Email</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user._id}>
+              <td>{user._id}</td>
+              <td>{user.username}</td>
+              <td>{user.email}</td>
+              <td>
+                <button onClick={() => handleNavigateToDetail(user._id)}>
+                  Chi tiết
+                </button>
+                <button onClick={() => handleNavigateToHistory(user._id)} className="last-button">
+                  Lịch sử mua hàng
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default UserList;

@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
         <li>
           <Link 
             to="/users" 
-            className={location.pathname === '/users' ? 'active' : ''}
+            className={location.pathname.startsWith('/users') ? 'active' : ''}
           >
             Quản lý người dùng
           </Link>

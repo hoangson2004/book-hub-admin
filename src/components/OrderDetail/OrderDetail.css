@@ -1,0 +1,28 @@
+.order-detail-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail-container h2,
+.order-detail-container h3 {
+    margin-bottom: 15px;
+}
+
+.order-detail-container p {
+    margin: 10px 0;
+}
+
+.order-detail-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-detail-container li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
