@@ -23,7 +23,7 @@ const App: React.FC = () => {
       <Route path='/sign-in' element={<SignInPage />} />
       <Route path="/books" element={<BookManagement />} >
         <Route index element={<BookList />} />
-        <Route path="books/create" element={<CreateBook />} />
+        <Route path="create" element={<CreateBook />} />
         <Route path=":id" element={<BookDetail />} />
       </Route>
       <Route path="/users" element={<UserManagement />} >

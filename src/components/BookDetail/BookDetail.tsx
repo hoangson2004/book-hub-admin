@@ -74,6 +74,7 @@ const BookDetail: React.FC = () => {
           <input
             type="text"
             value={formData.title}
+            readOnly
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
           />
         </div>
